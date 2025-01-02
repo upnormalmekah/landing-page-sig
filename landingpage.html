@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Bogor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Explore Bogor</h1>
+      <p>
+        Temukan lokasi wisata terbaik di Kota Bogor dengan aplikasi berbasis
+        data spasial kami!
+      </p>
+    </header>
+
+    <div class="container">
+      <section class="intro">
+        <h2>Kenapa Memilih Explore Bogor?</h2>
+        <p>
+          Kami, mahasiswa Ilmu Komputer, dalam rangka pembuatan tugas akhir
+          Sistem Informasi Geografis, mempersembahkan aplikasi yang dapat
+          membantu kamu mencari tempat wisata yang tersedia di Kota Bogor.
+          Dengan mengimplementasikan sistem data spasial dalam GIS/SIG, aplikasi
+          ini memudahkan pencarian dan pengumpulan informasi seputar lokasi atau
+          tempat wisata yang ingin dituju.
+        </p>
+        <button class="cta">Jelajahi Sekarang</button>
+      </section>
+
+      <section class="features">
+        <div class="feature">
+          <h3>Interaktif</h3>
+          <p>
+            Visualisasi peta interaktif untuk mempermudah Anda menjelajahi
+            lokasi wisata.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Informasi Lengkap</h3>
+          <p>
+            Detail setiap lokasi wisata, termasuk fasilitas, harga tiket, dan
+            ulasan pengunjung.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Mudah Diakses</h3>
+          <p>
+            Akses aplikasi di berbagai perangkat, kapan saja dan di mana saja.
+          </p>
+        </div>
+      </section>
+
+      <section class="team">
+        <h2>Anggota Kelompok</h2>
+        <div class="team-list">
+          <div class="team-member">
+            <img src="https://via.placeholder.com/100" alt="Alif" />
+            <p>Alif Wilah Destirawan</p>
+          </div>
+          <div class="team-member">
+            <img src="https://via.placeholder.com/100" alt="Adam" />
+            <p>Muhammad Adam Hamdani</p>
+          </div>
+          <div class="team-member">
+            <img src="https://via.placeholder.com/100" alt="Rifqi" />
+            <p>Rifqi Faiza Muhammad</p>
+          </div>
+          <div class="team-member">
+            <img src="https://via.placeholder.com/100" alt="Rafi" />
+            <p>Rafi Muhamad Nabil</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Explore Bogor. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll(".intro, .features, .team");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+
+        const ctaButton = document.querySelector(".cta");
+        ctaButton.addEventListener("click", () => {
+          alert("Selamat menjelajahi Bogor!");
+        });
+      });
+    </script>
+  </body>
+</html>
